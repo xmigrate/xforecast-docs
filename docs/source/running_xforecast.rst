@@ -7,6 +7,10 @@ You can change the configuration in the ``config.yaml`` file.
 
 Running with docker-compose
 ---------------------------
+Pre-requisites
+~~~~~~~~~~~~~~
+    * docker and docker-compose
+
 Execute the below commands to start xforecast application
 
 .. code-block:: bash
