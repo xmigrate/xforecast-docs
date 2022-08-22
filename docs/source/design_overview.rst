@@ -1,7 +1,8 @@
 Design Overview
 ===============
 
-Xforecast helps to predict the data points for a given time period of a metric. It learns from the past data points of that metric. We will be using pre-trained models for this purpose.
+Xforecast can predict the data points for a given time period of a metric. It learns from the past data points of that metric. 
+We will be using pre-trained models for this purpose.
 
 Architecture
 ------------
@@ -11,7 +12,7 @@ Architecture
         :align: center
         :alt: xforecast architecture diagram
 
-Xforecast has the following components,
+Components of xforecast are as below,
 
     1. Datastore
     2. Visualizer
@@ -25,10 +26,8 @@ Datastore
         :align: center
         :alt: Prometheus Logo
 
-
-We will be using prometheus as the supported datastore initially since the majority of the engineers uses this tool for 
-collecting metrics from k8s cluster. Datastore will be used to query the datapoints of the metrics to be predicted by the forecaster. 
-Datastore will be used by the forecaster to write the forecasted data points of that metrics.
+Datastore is a timeseries database. Currently we support prometheus and we will also add support for influxdb soon.
+Forecaster will be reading and writing data to the datastore.
 
 Visualizer
 ----------
@@ -49,8 +48,8 @@ Forecaster
         :align: center
         :alt: python Logo
 
-Forecaster is an always-running application written Python. It reads the configurations such as the datastore url, metric name, 
-training data hrs etc. from the config file. This config can be loaded as a configmap. Once the training is completed, 
+Forecaster is an always-running asynchronous application written in Python. It reads the configurations such as the datastore url, metric name, 
+hours of training data etc. from the config file. Once the training is completed, 
 it will start predicting the data points for x period in every y mins. Here x and y are loaded from the configuration. 
 the predicted data points will be written back to the datastore.
 
@@ -62,6 +61,7 @@ ML model
         :align: center
         :alt: prophet Logo
 
-The Prophet library is an open-source library designed for making forecasts for
-univariate time series datasets. It is easy to use and designed to automatically find agood set of hyperparameters for the model in an effort to make skillful forecasts for
-data with trends and seasonal structure by default
+We currently only supports the Prophet library is an open-source library designed for making forecasts for
+univariate time series datasets. It is easy to use and designed to automatically find a good set of hyperparameters for the model in an effort to make skillful forecasts for
+data with trends and seasonal structure by default.
+We will have support for additional ML/Statistical models which will fit varities of usecases.

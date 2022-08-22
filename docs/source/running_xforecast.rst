@@ -5,6 +5,8 @@ Xforecast can be run easily using the container image from xforecast docker regi
 run the application with docker-compose file which is provided in the application repo.
 You can change the configuration in the ``config.yaml`` file.
 
+Running with docker-compose
+---------------------------
 Execute the below commands to start xforecast application
 
 .. code-block:: bash
@@ -13,21 +15,21 @@ Execute the below commands to start xforecast application
     cd xforecast
     docker-compose up -d
 
-Requirements
-------------
+Running from source
+-------------------
+Pre-requisites
+~~~~~~~~~~~~~~
     * python 3.7 or higher
-    * python-snappy
-    * pytest
-    * pandas
-    * pystan
-    * prophet==1.0.1
-    * pyyaml
-    * requests
-    * datetime
-    * protobuf==3.20.0
+    * connectivity with prometheus
 
-**Or** install the required packages by executing the code below
+install the required dependency by executing the code below
 
 .. code-block:: bash
 
     pip3 install -r requirements.txt
+
+Then run the app with below command. It looks for ``config.yaml`` in the same directory level of ``main.py``
+
+.. code-block:: bash
+
+    python3 main.py

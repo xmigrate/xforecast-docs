@@ -6,8 +6,8 @@
 Welcome to Xforecast's documentation!
 =====================================
 
-**Xforecast** is an open source tool for forecasting your server metrics using Prometheus
-Here, you will find all the infromation about xforecast project
+**Xforecast** is an open source tool for forecasting realtime data, build for system/application metrics on timeseries database.
+Here, you will find all the infromation related to xforecast project
 
 
 

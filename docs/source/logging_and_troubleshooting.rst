@@ -5,11 +5,12 @@ Execute the below command to see the logs from xforecast app
 
 .. code-block:: bash
 
-    docker-compose -f app
+    docker-compose -f xforecast
 
 logs 
 ----
-The log file shows whether the app is performing properly. By default, xforecast uses a simple basic logging configuration to print log messages to standard error. The output of the log file might look like this:
+The log file shows whether the app is performing properly. By default, xforecast uses a simple basic logging configuration to print log messages to standard error. 
+The output of the log file might look like this:
 
 .. code-block:: bash
 
@@ -27,27 +28,27 @@ The log file shows whether the app is performing properly. By default, xforecast
     19-Aug-22 17:50:07 - <Response [204]>
     19-Aug-22 17:51:07 - Fetching data from prometheus
 
-Usually the log file contains logs like:
+Below are some sample log messages:
 
-``Reading configuration``: means the app is reading from the configuration file 
+``Reading configuration``: This means that the app is reading configuration parameters from the configuration file 
 
-``Fetching data from prometheus``: data is fetched using the http api 
+``Fetching data from prometheus``: This means that the data is fetched from prometheus 
 
-``Training ML model``: ML model is trained for the first time 
+``Training ML model``: ML model is trained for the first time when the app runs
 
-``Retraining ML model``: retrained the existing model using new data
+``Retraining ML model``: This means that it retrained the existing model using new data
 
-``<Response [204]>``: The data is succesfully written to prometheus
+``<Response [204]>``: This means that the predicted data is succesfully written to prometheus
 
-``<Response [404]>``: Writing failed 
+``<Response [404]>``: This means that the data failed to write to prometheus
 
 Known Errors
 ------------
 
-``some error: data`` occurs when there's a problem with the prometheus or prometheus query used.
+``some error: data`` occurs when there's a problem with the prometheus or prometheus query used
 
-``some error: yhat`` occurs when the data fetched from prometheus too less or there is no data at all.
+``some error: yhat`` occurs when the data fetched from prometheus too less or there is no data at all
 
-``<Response [404]>`` occurs when the writing is failed. This can happen if the time you are writing is too far to the past or to the future.
+``<Response [404]>`` occurs when the writing is failed. This can happen if the time you are writing is too far to the past or to the future
  
 

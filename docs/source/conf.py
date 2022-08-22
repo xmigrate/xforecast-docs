@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Xforecast'
-copyright = '2022, Josukutty Ulahannan'
+copyright = '2022, xmigrate.cloud'
 author = 'Josukutty Ulahannan'
 
 release = 'v0.1.0'
