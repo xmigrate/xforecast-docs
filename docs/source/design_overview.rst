@@ -26,8 +26,8 @@ Datastore
         :align: center
         :alt: Prometheus Logo
 
-Datastore is a timeseries database. Currently we support prometheus and we will also add support for influxdb soon.
-Forecaster will be reading and writing data to the datastore.
+Datastore is a time-series database. Currently, we support Prometheus and we will also add support for influxdb soon.
+The forecaster will be reading and writing data to the datastore.
 
 Visualizer
 ----------
@@ -48,9 +48,9 @@ Forecaster
         :align: center
         :alt: python Logo
 
-Forecaster is an always-running asynchronous application written in Python. It reads the configurations such as the datastore url, metric name, 
-hours of training data etc. from the config file. Once the training is completed, 
-it will start predicting the data points for x period in every y mins. Here x and y are loaded from the configuration. 
+Forecaster is an always-running asynchronous application written in Python. It reads the configurations such as the datastore URL, metric name, 
+hours of training data, etc. from the config file. Once the training is completed, 
+it will start predicting the data points for x period every y mins. Here x and y are loaded from the configuration. 
 the predicted data points will be written back to the datastore.
 
 ML model
@@ -61,7 +61,7 @@ ML model
         :align: center
         :alt: prophet Logo
 
-We currently only supports the Prophet library is an open-source library designed for making forecasts for
+We currently only support the Prophet library which is an open-source library designed for making forecasts for
 univariate time series datasets. It is easy to use and designed to automatically find a good set of hyperparameters for the model in an effort to make skillful forecasts for
 data with trends and seasonal structure by default.
-We will have support for additional ML/Statistical models which will fit varities of usecases.
+We will have support for additional ML/Statistical models which will fit varieties of use cases.

@@ -6,8 +6,8 @@
 Welcome to Xforecast's documentation!
 =====================================
 
-**Xforecast** is an open source tool for forecasting realtime data, build for system/application metrics on timeseries database.
-Here, you will find all the infromation related to xforecast project.
+**Xforecast** is an open source tool for forecasting real-time data, build for system/application metrics on time-series database.
+Here, you will find all the information related to the xforecast project.
 
 
 

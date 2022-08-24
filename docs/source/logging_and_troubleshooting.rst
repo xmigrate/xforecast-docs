@@ -38,7 +38,7 @@ Below are some sample log messages:
 
 ``Retraining ML model``: This means that it retrained the existing model using new data
 
-``<Response [204]>``: This means that the predicted data is succesfully written to prometheus
+``<Response [204]>``: This means that the predicted data is successfully written to prometheus
 
 ``<Response [404]>``: This means that the data failed to write to prometheus
 
@@ -47,7 +47,7 @@ Known Errors
 
 ``some error: data`` occurs when there's a problem with the prometheus or prometheus query used
 
-``some error: yhat`` occurs when the data fetched from prometheus too less or there is no data at all
+``some error: yhat`` occurs when the data fetched from prometheus is too less or there is no data at all
 
 ``<Response [404]>`` occurs when the writing is failed. This can happen if the time you are writing is too far to the past or to the future
  

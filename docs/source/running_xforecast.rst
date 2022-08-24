@@ -2,7 +2,7 @@ Running Xforecast
 =================
 
 Xforecast can be run easily using the container image from xforecast docker registry. We recommend to
-run the application with docker-compose file which is provided in the application repo.
+run the application with the docker-compose file which is provided in the application repo.
 You can change the configuration in the ``config.yaml`` file.
 
 Running with docker-compose
