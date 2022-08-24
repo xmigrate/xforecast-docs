@@ -7,7 +7,7 @@ We will be using pre-trained models for this purpose.
 Architecture
 ------------
 
-    .. image:: images/architecture.png
+    .. image:: images/architec.svg
         :width: 400
         :align: center
         :alt: xforecast architecture diagram
