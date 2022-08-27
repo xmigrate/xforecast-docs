@@ -37,3 +37,27 @@ Then run the app with below command. It looks for ``config.yaml`` in the same di
 .. code-block:: bash
 
     python3 main.py
+
+Deployment using helm
+-------------------
+Pre-requisites
+~~~~~~~~~~~~~~
+    * helm 3
+    * connectivity with prometheus
+    * connectivity with kubernetes cluster
+    
+Execute the below commands to start xforecast application
+
+.. code-block:: bash
+
+    git clone https://github.com/xmigrate/xforecast.git
+    cd xforecast/xforecast-helm
+
+Then make necessary changes in ``values.yaml`` file. Add xforecast configuration in  ``values.yaml`` file under ``config`` section.
+
+
+Install chart using following command.
+
+.. code-block:: bash
+
+    helm install xforecast .
