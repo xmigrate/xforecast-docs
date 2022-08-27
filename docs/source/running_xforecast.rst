@@ -53,7 +53,7 @@ Execute the below commands to start xforecast application
     git clone https://github.com/xmigrate/xforecast.git
     cd xforecast/xforecast-helm
 
-Then make necessary changes in ``values.yaml`` file. add xforecast configuration in  ``values.yaml`` file under ``config`` section.
+Then make necessary changes in ``values.yaml`` file. Add xforecast configuration in  ``values.yaml`` file under ``config`` section.
 
 .. code-block:: bash
 
