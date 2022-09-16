@@ -7,7 +7,7 @@ We will be using pre-trained models for this purpose.
 Architecture
 ------------
 
-    .. image:: images/architec.svg
+    .. image:: images/architec.jpeg
         :width: 400
         :align: center
         :alt: xforecast architecture diagram
@@ -21,12 +21,14 @@ Components of xforecast are as below,
 Datastore
 ---------
 
-    .. image:: images/Prometheus.png
-        :width: 150
+    .. image:: images/datastore.png
+        :width: 350
         :align: center
-        :alt: Prometheus Logo
+        :alt: datastore logo
 
-Datastore is a time-series database. Currently, we support Prometheus and we will also add support for influxdb soon.
+    
+
+Datastore is a time-series database. We support Influxdb and Prometheus as our datastores.
 The forecaster will be reading and writing data to the datastore.
 
 Visualizer

@@ -39,7 +39,7 @@ Then run the app with below command. It looks for ``config.yaml`` in the same di
     python3 main.py
 
 Deployment using helm
--------------------
+---------------------
 Pre-requisites
 ~~~~~~~~~~~~~~
     * helm 3
