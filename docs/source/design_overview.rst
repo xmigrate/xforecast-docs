@@ -63,7 +63,5 @@ ML model
         :align: center
         :alt: prophet Logo
 
-We currently only support the Prophet library which is an open-source library designed for making forecasts for
-univariate time series datasets. It is easy to use and designed to automatically find a good set of hyperparameters for the model in an effort to make skillful forecasts for
-data with trends and seasonal structure by default.
+We currently only support the Prophet library which is an open-source library designed for making forecasts for time series datasets. It is easy to use and designed with tuneable hyperparameters in order for the user to be able to find the best set of parameters for each model.
 We will have support for additional ML/Statistical models which will fit varieties of use cases.
