@@ -36,6 +36,21 @@ Config yaml
 
 ``write_back_metric`` - The name of the metric to write the predicted data points
 
+``models`` - Dictionary containing the model details 
+
+    ``model_name`` - Name of the forecaster model
+
+    ``hyperparameters`` - The parameters and values used for tuning the model (The parameters below are for the Prophet model)
+
+      ``changepoint_prior_scale`` - Determines the flexibility of the trend changes
+
+      ``seasonality_prior_scale`` - Determines the flexibility of the seasonality changes
+
+      ``holidays_prior_scale`` - Determines the flexibiity to fit the holidays
+
+      ``changepoint_range`` - Specifies the proportion of history where the trend changes are applied
+
+      ``seasonality_mode`` - Specifies the mode of seasonality applied during the model training
 
 Here is an example of the configuration file:
 
@@ -57,6 +72,14 @@ Here is an example of the configuration file:
     forecast_every: 60 #At what interval the app do the predictions 
     forecast_basedon: 60 #Forecast based on past how many data points
     write_back_metric: forecast_cpu_use #Where should it write back the metrics
+    models : 
+      model_name: prophet
+      hyperparameters:
+        changepoint_prior_scale : 0.05 #determines the flexibility of the trend changes
+        seasonality_prior_scale : 10 #determines the flexibility of the seasonality changes
+        holidays_prior_scale : 10 #determines the flexibiity to fit the holidays
+        changepoint_range : 0.8 #proportion of the history where the trend changes are applied
+        seasonality_mode : additive #whether the mode of seasonality is additive or multiplicative
   - name: memory_usage  #metric name in prometheus
     data_store : 
       name : prometheus  
@@ -67,7 +90,14 @@ Here is an example of the configuration file:
     forecast_every: 60 #At what interval the app do the predictions 
     forecast_basedon: 60 #Forecast based on past how many data points
     write_back_metric: forecast_mem_usage #Where should it write back the metrics
-
+    models : 
+      model_name: prophet
+      hyperparameters:
+        changepoint_prior_scale : 0.5 #determines the flexibility of the trend changes
+        seasonality_prior_scale : 0.1 #determines the flexibility of the seasonality changes
+        holidays_prior_scale : 10 #determines the flexibiity to fit the holidays
+        changepoint_range : 0.95 #proportion of the history where the trend changes are applied
+        seasonality_mode : multiplicative #whether the mode of seasonality is additive or multiplicative
 
 
 
