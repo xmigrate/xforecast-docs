@@ -1,8 +1,8 @@
 Design Overview
 ===============
 
-Xforecast can predict the data points for a given time period of a metric. It learns from the past data points of that metric. 
-We will be using pre-trained models for this purpose.
+Xforecast is a predictive analytics tool which could learn from historical datapoints, understand the seasonality or pattern in the data so that it could predict the datapoints in future.
+We will be using opensource ML models as well as custom ML models for this purpose.
 
 Architecture
 ------------
@@ -28,8 +28,8 @@ Datastore
 
     
 
-Datastore is a time-series database. We support Influxdb and Prometheus as our datastores.
-The forecaster will be reading and writing data to the datastore.
+Datastore can be a timeseries metricstore. Currently we support Influxdb and Prometheus.
+The forecaster will be connected to the metricstore so that it can read and write data to the metricstore.
 
 Visualizer
 ----------
@@ -39,8 +39,9 @@ Visualizer
             :align: center
             :alt: Grafana image
 
-We use Grafana to plot the graph against the actual data points and forecasted data points of the metrics. This can be the same grafana that the engineers already have.
-Grafana can be used to set alerts to remediate the issue proactively with automated or manual means.
+We use Grafana to plot the graph against the actual data points and forecasted data points of the metrics. This can be the same grafana that the engineers already have in there environment.
+Grafana can be used to set alerts to remediate the issue proactively with automated or manual means. It also doesn't mean that xforecast is tightly coupled to Grafana. The user have the freedom
+to choose any data visualisation tool of his choice.
 
 Forecaster
 ----------
@@ -50,10 +51,9 @@ Forecaster
         :align: center
         :alt: python Logo
 
-Forecaster is an always-running asynchronous application written in Python. It reads the configurations such as the datastore URL, metric name, 
-hours of training data, etc. from the config file. Once the training is completed, 
-it will start predicting the data points for x period every y mins. Here x and y are loaded from the configuration. 
-the predicted data points will be written back to the datastore.
+Forecaster is an always-running asynchronous application written in Python. It reads the definition for the metric forcasting from the config file. Such as the datastore url, metric name, 
+hours of training data, etc. Once the training is completed, it will start predicting the data points for x period at every y mins. Here x and y are loaded from the configuration. 
+The predicted data points will be written back to the datastore.
 
 ML model
 --------
@@ -63,5 +63,5 @@ ML model
         :align: center
         :alt: prophet Logo
 
-We currently only support the Prophet library which is an open-source library designed for making forecasts for time series datasets. It is easy to use and designed with tuneable hyperparameters in order for the user to be able to find the best set of parameters for each model.
-We will have support for additional ML/Statistical models which will fit varieties of use cases.
+We currently only support the Prophet library which is an open-source ML library designed for making forecasts for time series datasets. It is easy to use and designed with tuneable hyperparameters
+in order for the user to be able to find the best set of parameters for each model. We will have support for additional ML/Statistical models which will fit varieties of use cases.

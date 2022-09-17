@@ -8,21 +8,21 @@ Config yaml
 
 ``name`` - Name of the metric
 
-``datastore`` - Dictionary containing the datastore details
+``datastore`` - Definition for the datastore to be used
 
-  ``name`` - Datatsore name 
+  ``name`` - Datastore name, influxdb or prometheus
 
-  ``url`` - Datastore url (Prometheus requires port specified in the url.)
+  ``url`` - Datastore url (Prometheus requires port specified in the url, eg. http://<ip>:9090)
 
-  ``port`` - Datastore port (The below options are only required for influxdb.)
+  ``port`` - Datastore port, only required for influxdb
 
-  ``user`` - Username
+  ``user`` - Username, only required for influxdb
 
-  ``pass`` - Password
+  ``pass`` - Password, only required for influxdb
 
-  ``db_name`` - Database name
+  ``db_name`` - Database name, only required for influxdb
 
-  ``measurement`` - Measurement name
+  ``measurement`` - Measurement name of the metric, only required for influxdb
 
 ``start_time`` - Start time in UTC
 
@@ -34,13 +34,13 @@ Config yaml
 
 ``forecast_basedon`` - Forecast based on past how many seconds of data points
 
-``write_back_metric`` - The name of the metric to write the predicted data points
+``write_back_metric`` - Measurement name to be used for storing the forecasted metrics
 
-``models`` - Dictionary containing the model details 
+``models`` - Definition for the ML model which will be used
 
-    ``model_name`` - Name of the forecaster model
+    ``model_name`` - Name of the model to be used for this metric, available value is now only prophet
 
-    ``hyperparameters`` - The parameters and values used for tuning the model (The parameters below are for the Prophet model)
+    ``hyperparameters`` - The parameters and values used for tuning the model (The parameters below are for the prophet model)
 
       ``changepoint_prior_scale`` - Determines the flexibility of the trend changes
 
