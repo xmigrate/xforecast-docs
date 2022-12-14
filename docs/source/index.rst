@@ -11,7 +11,7 @@ Here, you will find all the information related to the xforecast project.
 
 
 
-Check out the :doc:`running_xforecast` section to get started with running the project.
+Check out the :doc:`running_xforecast` section to get started with the project.
 
 
 .. note::
