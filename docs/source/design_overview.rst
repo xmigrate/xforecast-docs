@@ -39,9 +39,9 @@ Visualizer
             :align: center
             :alt: Grafana image
 
-We use Grafana to plot the graph against the actual data points and forecasted data points of the metrics. This can be the same grafana that the engineers already have in there environment.
-Grafana can be used to set alerts to remediate the issue proactively with automated or manual means. It also doesn't mean that xforecast is tightly coupled to Grafana. The user have the freedom
-to choose any data visualisation tool of his choice.
+We use Grafana to plot the graph against the actual data points and forecasted data points of the metrics. This can be the same grafana that the engineers already have in their environment.
+Grafana can be used to set alerts to remediate the issue proactively with automated or manual means. This doesn't mean that xforecast is tightly coupled to Grafana. The user have the freedom
+to choose any data visualisation tool of their choice.
 
 Forecaster
 ----------
@@ -51,7 +51,7 @@ Forecaster
         :align: center
         :alt: python Logo
 
-Forecaster is an always-running asynchronous application written in Python. It reads the definition for the metric forcasting from the config file. Such as the datastore url, metric name, 
+Forecaster is an always-running asynchronous application written in Python. It reads the definition for the metric forcasting from the config file; such as the datastore url, metric name, 
 hours of training data, etc. Once the training is completed, it will start predicting the data points for x period at every y mins. Here x and y are loaded from the configuration. 
 The predicted data points will be written back to the datastore.
 
@@ -64,4 +64,4 @@ ML model
         :alt: prophet Logo
 
 We currently only support the Prophet library which is an open-source ML library designed for making forecasts for time series datasets. It is easy to use and designed with tuneable hyperparameters
-in order for the user to be able to find the best set of parameters for each model. We will have support for additional ML/Statistical models which will fit varieties of use cases.
+in order for the user to be able to find the best set of parameters for each model. We will have support for additional ML/Statistical models which will fit varieties of use cases in the future.
